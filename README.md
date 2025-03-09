@@ -18,3 +18,71 @@
 2. CarGame클래스의 메서드 getWinners: 승자들이 누군지 판단한다.
 3. InputValidator/CarNameValidator클래스의 메서드 checkCarName: 올바른 자동차이름인지 판단한다.
 4. InputValidator/TryNumberValidator클래스의 메서드 checkTryNumber: 올바른 시도횟수인지 판단한다.
+
+< 설계 >
+-----------------------------------------
+interface
+
+-MoveStrategy : 자동차를 어떤 조건에 의해 움직일 것인지
+    - RandomMoveStrategy() 
+-------------------------------------------
+Model
+1. Class Car 
+    - 멤버 변수
+      - CarName carName : 자동차의 이름
+      - Position position : 자동차의 이동거리
+
+    - 메서드
+      - void move(MoveStrategy moveStrategy) : 
+      - 
+---------------------------------------------
+
+class CarName 
+    - 멤버 변수
+        - String name
+
+class Position
+    - 멤버 변수
+        - int position
+      
+---------------------------------------------
+Controller
+1. Class CarGame
+    - 멤버 변수
+      - Players players : 게임에 참가하는 Car 
+      - WinnerList winnerList: 승자List
+
+    - 메서드
+      - void startRacing()
+      - void round()
+      - void initCars()
+      - void initTryNum()
+------------------------------------------
+
+class Players
+    - 멤버 변수
+        - List<Car> players
+
+class WinnerList
+    - 멤버 변수
+        - List<Car> winners
+
+-------------------------------------------
+View
+
+1. InPutView
+    - 메서드
+      - List<String> readCarName
+      - int readTryNumber
+
+2. OutPutView
+    - 메서드
+      - void printRoundResult : 게임 중간 결과
+      - void printWinner : 승자 출력
+
+
+--------------------------------------------
+utils
+
+class CarNameValidator
+class TryNumberValidator
