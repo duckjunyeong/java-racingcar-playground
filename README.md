@@ -35,7 +35,6 @@
 
 < 피드백 >
 참고: https://github.com/kizzis/java-racingcar-6/blob/minisyu/src/main/java/racingcar/util/Err.java
-
 1. outputView와 관련된 내용이 수정되었을 때 Car클래스의 메서드가 수정되어야하는 상황이 발생했는데 이는 getter함수를 사용하지 않기 위해서 발생한 문제이다.
 이로 인해 출력과 관련된 내용이 수정되었을 때 Car클래스의 메서드를 수정해야하는 일이 발생한다. -> DTO (record) 을 이용해 데이터정보를 outputView에 전달해라.
 
@@ -59,4 +58,6 @@
 7. 불편객체를 만들어 보아라. 불편 객체를 사용하면 데이터의 안전성을 보장해줄 수 있다. 가변객체의 경우 값이 의도치 않게 변경될 수도 있으나 불변 객체를 사용하면
 이를 예방할 수 있다.
 
-8. enum 사용하는 이유 이해하기  (OK)
+8. enum 사용하는 이유 이해하기
+
+9. MVC 패턴을 적용해라. 
