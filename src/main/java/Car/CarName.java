@@ -11,11 +11,15 @@ public class CarName {
     this.name = name;
   }
 
-  public static CarName create(String name){
-    return new CarName(name);
-  }
-
   public String getName(){
     return name;
+  }
+
+  @Override
+  public boolean equals(Object obj){
+    if (obj == this) return true;
+    if (obj == null || !(obj instanceof CarName)) return false;
+    CarName carName = (CarName) obj;
+    return carName.getName() == this.getName();
   }
 }

@@ -5,7 +5,7 @@ import Constant.Err;
 public class PositionValidator {
 
   public boolean isValid(int num) {
-    if (num <= 0) {
+    if (num < 0) {
       throw new IllegalArgumentException(Err.NEGATIVE_NUM.getMessage());
     }
     return true;

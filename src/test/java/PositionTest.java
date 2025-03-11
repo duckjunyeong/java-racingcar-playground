@@ -14,7 +14,7 @@ public class PositionTest {
   @DisplayName("유효한 값이 들어갔을 때 객체생성")
   void 객체생성1(){
     String input = "3";
-    Position position = Position.create(input);
+    Position position = new Position(input);
     assertThat(position.getPosition()).isEqualTo(3);
   }
 
@@ -23,7 +23,7 @@ public class PositionTest {
   void 객체생성2(){
     String input = "-3";
     assertThrows(IllegalArgumentException.class, () -> {
-      Position position = Position.create(input);
+      Position position = new Position(input);
     });
   }
 
@@ -31,8 +31,7 @@ public class PositionTest {
   @DisplayName("0이 들어갔을 때 객체생성")
   void 객체생성3(){
     String input = "0";
-    assertThrows(IllegalArgumentException.class, () -> {
-      Position position = Position.create(input);
-    });
+    Position position = new Position(input);
+    assertThat(position.getPosition()).isEqualTo(0);
   }
 }

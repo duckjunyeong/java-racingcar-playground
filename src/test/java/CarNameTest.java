@@ -11,7 +11,7 @@ public class CarNameTest {
   @DisplayName("올바른 자동차 이름이 주어졌을 때 CarName객체를 생성한다.")
   void CarName객체생성1(){
     String input = "jun";
-    CarName carName = CarName.create(input);
+    CarName carName = new CarName(input);
     assertThat(carName.getName()).isEqualTo("jun");
   }
 
@@ -20,7 +20,7 @@ public class CarNameTest {
   void CarName객체생성2(){
     String input = "     ";
     assertThrows(IllegalArgumentException.class, () -> {
-      CarName carName = CarName.create(input);
+      CarName carName = new CarName(input);
     });
   }
 
@@ -29,7 +29,7 @@ public class CarNameTest {
   void CarName객체생성3(){
     String input = "junjunjun";
     assertThrows(IllegalArgumentException.class, () -> {
-      CarName carName = CarName.create(input);
+      CarName carName = new CarName(input);
     });
   }
 }

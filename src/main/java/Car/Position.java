@@ -15,12 +15,16 @@ public class Position {
     position = Integer.parseInt(num);
   }
 
-  public static Position create(String num){
-    return new Position(num);
+  public int getPosition(){
+    return position;
   }
 
 
-  public int getPosition(){
-    return position;
+  @Override
+  public boolean equals(Object obj){
+    if (obj == this) return true;
+    if (obj == null || !(obj instanceof Position)) return false;
+    Position pos = (Position) obj;
+    return pos.getPosition() == this.position;
   }
 }
