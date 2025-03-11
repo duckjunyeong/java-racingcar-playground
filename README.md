@@ -34,7 +34,7 @@ Model
 
     - 메서드
       - void move(MoveStrategy moveStrategy) : 
-      - 
+      - CarInfo getCarInfo(); 
 ---------------------------------------------
 
 class CarName 
@@ -46,39 +46,61 @@ class Position
         - int position
       
 ---------------------------------------------
-Controller
-1. Class CarGame
+model
+
+class Cars
     - 멤버 변수
-      - Players players : 게임에 참가하는 Car 
-      - WinnerList winnerList: 승자List
+        - CarsList carsList
 
     - 메서드
-      - void startRacing()
-      - void round()
-      - void initCars()
-      - void initTryNum()
-------------------------------------------
+        - CarInfoList getCarInfoList() : 자동차들의 각각의 결과들을 DTO에 담아 반환한다. 
+        - RaceFinalResult getRaceFinalResult() 
+        - void moveAllCars()
 
-class Players
-    - 멤버 변수
-        - List<Car> players
+--------------------------------------------
+DTO
 
-class WinnerList
+class record CarInfoList(List<CarInfo> carInfoList)
+class record CarInfo(CarName name, Position position)
+
+--------------------------------------------
+
+class CarList
     - 멤버 변수
-        - List<Car> winners
+        - List<Car> cars;
+
+
+    - 메서드
+        - void moveCars()
+        - CarInfoList generateCarInfoList()
+        - RaceFinalResult gnerateRaceFinalResult() 
+---------------------------------------------
+Controller
+1. Class Game
+    - 멤버 변수
+      - private static final OutputView
+      - private static final IntputView
+
+    - 메서드
+      - void playGame()
+      - void playOneRound(Cars cars, TryNumber tryNumber)
+      - Cars generateCars() 
+      - TryNumber generateTryNumber()
+      - void OneRoundResult()
+      - void getGameResult()
 
 -------------------------------------------
 View
 
 1. InPutView
     - 메서드
-      - List<String> readCarName
-      - int readTryNumber
+      - Cars readCarsName()
+      - TryNumber readTryNumber()
 
 2. OutPutView
     - 메서드
-      - void printRoundResult : 게임 중간 결과
-      - void printWinner : 승자 출력
+      - void printRoundResult(CarInfoList carInfoList) : 게임 중간 결과
+      - void printWinner(RaceFinalResult raceFinalResult) : 승자 출력
 
 
 --------------------------------------------
