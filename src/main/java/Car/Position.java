@@ -27,4 +27,8 @@ public class Position {
     Position pos = (Position) obj;
     return pos.getPosition() == this.position;
   }
+
+  public void increase() {
+      ++position;
+  }
 }

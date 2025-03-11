@@ -35,4 +35,30 @@ public class CarTest {
       Car jun = new Car("jun", "-2");
     });
   }
+
+  @Test
+  @DisplayName("move함수 테스트, 숫자가 4이상이면 움직인다.")
+  void Move함수테스트1(){
+    Car jun = new Car("jun"){
+      @Override
+      protected int generateRandomNumber(int start, int end){
+        return 4;
+      }
+    };
+    jun.move();
+    assertThat(jun.getPosition()).isEqualTo(new Position("1"));
+  }
+
+  @Test
+  @DisplayName("move함수 테스트, 숫자가 4미만이면 움직이지 않는다.")
+  void Move함수테스트2(){
+    Car jun = new Car("jun"){
+      @Override
+      protected int generateRandomNumber(int start, int end){
+        return 3;
+      }
+    };
+    jun.move();
+    assertThat(jun.getPosition()).isEqualTo(new Position("0"));
+  }
 }
