@@ -14,10 +14,16 @@
 
 < TDD 과정 >
 
-1. Car클래스의 메서드 move: 랜덤값이 4이상이면 자동차를 움직인다.
-2. CarGame클래스의 메서드 getWinners: 승자들이 누군지 판단한다.
-3. InputValidator/CarNameValidator클래스의 메서드 checkCarName: 올바른 자동차이름인지 판단한다.
-4. InputValidator/TryNumberValidator클래스의 메서드 checkTryNumber: 올바른 시도횟수인지 판단한다.
+CarTest
+1. CarNameValidator 테스트 후 CarName 객체생성 테스트 
+2. PositionValidator 테스트 후 Position 객체생성 테스트
+3. Car 객체생성 테스트 
+4. Car.move 메서드 테스트 ( 4이상의 값이 들어가면 움직인다. )
+
+CarsTest
+1. CarList 객체생성 테스트
+2. Cars 객체생성 테스트
+3. Cars.moveAllCars 메스드 테스트
 
 < 설계 >
 -----------------------------------------
@@ -50,12 +56,22 @@ model
 
 class Cars
     - 멤버 변수
-        - CarsList carsList
+        - CarList carList
 
     - 메서드
         - CarInfoList getCarInfoList() : 자동차들의 각각의 결과들을 DTO에 담아 반환한다. 
         - RaceFinalResult getRaceFinalResult() 
         - void moveAllCars()
+-------------------------------------------
+class CarList
+    - 멤버 변수
+        - List<Car> cars
+
+
+    - 메서드
+        - void moveCars()
+        - CarInfoList generateCarInfoList()
+        - RaceFinalResult gnerateRaceFinalResult()
 
 --------------------------------------------
 DTO
@@ -63,17 +79,6 @@ DTO
 class record CarInfoList(List<CarInfo> carInfoList)
 class record CarInfo(CarName name, Position position)
 
---------------------------------------------
-
-class CarList
-    - 멤버 변수
-        - List<Car> cars;
-
-
-    - 메서드
-        - void moveCars()
-        - CarInfoList generateCarInfoList()
-        - RaceFinalResult gnerateRaceFinalResult() 
 ---------------------------------------------
 Controller
 1. Class Game
