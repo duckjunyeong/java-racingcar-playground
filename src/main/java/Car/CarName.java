@@ -20,6 +20,6 @@ public class CarName {
     if (obj == this) return true;
     if (obj == null || !(obj instanceof CarName)) return false;
     CarName carName = (CarName) obj;
-    return carName.getName() == this.getName();
+    return carName.getName().equals(this.getName());
   }
 }

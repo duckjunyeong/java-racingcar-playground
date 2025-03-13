@@ -1,5 +1,6 @@
 package Car;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Car {
@@ -13,8 +14,7 @@ public class Car {
   }
 
   public Car(String carName){
-    this.carName = new CarName(carName);
-    this.position = new Position("0");
+    this(carName, "0");
   }
 
   public CarName getName(){
@@ -35,5 +35,17 @@ public class Car {
   protected int generateRandomNumber(int start, int end) {
     Random random = new Random();
     return random.nextInt(end - start + 1) + start;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null || getClass() != o.getClass()) return false;
+    Car car = (Car) o;
+    return Objects.equals(carName, car.carName) && Objects.equals(position, car.position);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(carName, position);
   }
 }

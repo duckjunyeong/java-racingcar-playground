@@ -7,7 +7,7 @@ public class Position {
   private static final PositionValidator validator = new PositionValidator();
 
   public Position(){
-    new Position("0");
+    this.position = 0;
   }
 
   public Position(String num){

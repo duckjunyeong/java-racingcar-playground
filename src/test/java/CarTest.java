@@ -61,4 +61,13 @@ public class CarTest {
     jun.move();
     assertThat(jun.getPosition()).isEqualTo(new Position("0"));
   }
+
+  @Test
+  @DisplayName("동일한 필드값을 가지면 똑같은 객체로 인식이 되는지")
+  public void 동일한필드값의_객체를_비교한다() {
+    Car jun = new Car("jun");
+    Car jun2 = new Car("jun", "0");
+    assertThat(jun).isEqualTo(jun2);
+  }
+
 }
