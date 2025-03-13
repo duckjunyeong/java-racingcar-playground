@@ -16,6 +16,11 @@ public class Cars {
     this.carList = new CarList(list);
   }
 
+
+  public void moveAllCars() {
+   carList.moveCars();
+  }
+
   @Override
   public boolean equals(Object o) {
     if (o == null || getClass() != o.getClass()) return false;
