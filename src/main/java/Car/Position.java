@@ -2,7 +2,9 @@ package Car;
 
 import Validator.PositionValidator;
 
-public class Position {
+import java.util.Comparator;
+
+public class Position implements Comparable<Position> {
   private int position;
   private static final PositionValidator validator = new PositionValidator();
 
@@ -13,6 +15,11 @@ public class Position {
   public Position(String num){
     validator.isValid(num);
     position = Integer.parseInt(num);
+  }
+
+  @Override
+  public int compareTo(Position pos1) {
+    return Integer.compare(this.position, pos1.position);
   }
 
   public int getPosition(){

@@ -1,6 +1,7 @@
 package Cars;
 
 import Car.Car;
+import Cars.dto.RaceFinalWinner;
 
 import java.util.List;
 import java.util.Objects;
@@ -32,4 +33,8 @@ public class Cars {
   public int hashCode() {
     return Objects.hashCode(carList);
   }
+
+//  public RaceFinalWinner getRaceFinalWinner() {
+//    return carList.generateRaceFinalWinner();
+//  }
 }

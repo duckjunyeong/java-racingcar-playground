@@ -3,7 +3,7 @@ package Car;
 import java.util.Objects;
 import java.util.Random;
 
-public class Car {
+public class Car implements Comparable<Car> {
   private static final int MINIMUM_MOVEMENT_NUM = 4;
   private CarName carName;
   private Position position;
@@ -38,6 +38,11 @@ public class Car {
   }
 
   @Override
+  public int compareTo(Car car){
+    return position.compareTo(car.getPosition());
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (o == null || getClass() != o.getClass()) return false;
     Car car = (Car) o;
@@ -48,4 +53,5 @@ public class Car {
   public int hashCode() {
     return Objects.hash(carName, position);
   }
+
 }

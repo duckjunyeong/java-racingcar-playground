@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import Car.Car;
+import Cars.Cars;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -36,5 +37,12 @@ public class CarListTest {
     assertThrows(IllegalArgumentException.class, () -> {
       new CarList(input);
     });
+  }
+
+  @Test
+  @DisplayName("getWinnerScoreCar메서드 테스트")
+  void getWinnerScoreCar_test(){
+    CarList carlist = new CarList(Arrays.asList(new Car("jun", "14"), new Car("han", "9")));
+    assertThat(carlist.getWinnerScoreCar()).isEqualTo(new Car("jun", "14"));
   }
 }

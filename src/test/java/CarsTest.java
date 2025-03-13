@@ -1,3 +1,4 @@
+import Cars.dto.RaceFinalWinner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -36,4 +37,12 @@ public class CarsTest {
       new Cars(input);
     });
   }
+
+//  @Test
+//  @DisplayName("승자를 올바르게 찾는지 확인")
+//  void getRaceFinalWinner_test(){
+//    Cars car = new Cars(Arrays.asList(new Car("jun", "5"), new Car("han", "6")));
+//    RaceFinalWinner expected = new RaceFinalWinner(Arrays.asList(new Car("han", "6")));
+//    assertThat(car.getRaceFinalWinner()).isEqaulTo(expected);
+//  }
 }

@@ -1,6 +1,7 @@
 package Cars;
 
 import Car.Car;
+import Cars.dto.RaceFinalWinner;
 import Validator.CarNameValidator;
 import utils.StringConvert;
 
@@ -26,6 +27,16 @@ public class CarList {
   public void moveCars() {
     carList.stream()
         .forEach(Car::move);
+  }
+
+//  public RaceFinalWinner generateRaceFinalWinner() {
+//    return RaceFinalWinner()
+//  }
+
+  public Car getWinnerScoreCar(){
+    return carList.stream()
+        .max(Car::compareTo)
+        .orElseThrow(() -> new IllegalArgumentException("나중에 Err 에 넣기 "));
   }
 
   private List<Car> initCarList(String carString) {
