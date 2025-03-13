@@ -15,10 +15,14 @@ public class CarList {
   private List<Car> carList;
 
   public CarList(String carString){
-    CarListValidator.isValid(carString);
+    CarListValidator.isStrValid(carString);
     this.carList = initCarList(carString);
   }
 
+  public CarList(List<Car> list){
+    CarListValidator.isListValid(list);
+    this.carList = list;
+  }
   private List<Car> initCarList(String carString) {
     return StringConvert.toList(carString, ",")
         .stream()
