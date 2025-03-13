@@ -22,6 +22,10 @@ public class Cars {
    carList.moveCars();
   }
 
+  public RaceFinalWinner getRaceFinalWinner() {
+    return new RaceFinalWinner(carList.generateRaceFinalWinner());
+  }
+
   @Override
   public boolean equals(Object o) {
     if (o == null || getClass() != o.getClass()) return false;
@@ -34,7 +38,4 @@ public class Cars {
     return Objects.hashCode(carList);
   }
 
-//  public RaceFinalWinner getRaceFinalWinner() {
-//    return carList.generateRaceFinalWinner();
-//  }
 }

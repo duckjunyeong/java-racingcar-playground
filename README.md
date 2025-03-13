@@ -23,8 +23,7 @@ CarTest
 CarsTest
 1. CarList 객체생성 테스트
 2. Cars 객체생성 테스트
-3. Cars.moveAllCars 메스드 테스트
-4. Cars.getRaceFinalWinner 메서드 테스트
+3. Cars.getRaceFinalWinner 메서드 테스트
 
 -OutputView 
 -InputView

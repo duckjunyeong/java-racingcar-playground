@@ -1,5 +1,6 @@
 import Car.dto.CarInfo;
 import Cars.dto.CarInfoList;
+import Cars.dto.RaceFinalWinner;
 import View.OutputView;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ public class OutputViewTest {
   private final OutputView outputview = new OutputView();
 
   @Test
-  @DisplayName("Dto로 값을 받아서 올바르게 출력되는지 확인")
+  @DisplayName("printRoundResult 메서드 출력확인")
   void printRoundResult_tset(){
     Car jun = new Car("jun", "3");
     Car kim = new Car("kim", "2");
@@ -24,5 +25,12 @@ public class OutputViewTest {
     List<CarInfo> list = Arrays.asList(jun_CarInfo, kim_CarInfo);
     CarInfoList infoList = new CarInfoList(list);
     outputview.printRoundResult(infoList);
+  }
+
+  @Test
+  @DisplayName("printWinner 메서드 출력확인")
+  void printWinner_test(){
+    RaceFinalWinner winner = new RaceFinalWinner(Arrays.asList(new Car("jun"), new Car("han")));
+    outputview.printWinner(winner);
   }
 }
