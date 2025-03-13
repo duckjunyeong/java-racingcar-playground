@@ -9,6 +9,7 @@ public class OutputView {
   public void printRoundResult(CarInfoList carinfoList) {
     carinfoList.getMessage();
   }
+
   public void printWinner(RaceFinalWinner winnerList) {
     winnerList.getMessage();
   }
