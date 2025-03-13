@@ -28,9 +28,6 @@ public class CarList {
         .forEach(Car::move);
   }
 
-
-
-
   private List<Car> initCarList(String carString) {
     return StringConvert.toList(carString, ",")
         .stream()
@@ -38,13 +35,7 @@ public class CarList {
         .map(Car::new)
         .collect(Collectors.toList());
   }
-  public void printAllelement(){
-    for (Car car:carList){
-      CarName name = car.getName();
-      Position pos = car.getPosition();
-      System.out.println(name.getName() + ", " + pos.getPosition());
-    }
-  }
+
   public List<Car> getCarList(){
     return carList;
   }

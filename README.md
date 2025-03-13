@@ -24,6 +24,8 @@ CarsTest
 1. CarList 객체생성 테스트
 2. Cars 객체생성 테스트
 3. Cars.moveAllCars 메스드 테스트
+4. Cars.getCarInfoList 메서드 테스트
+5. Cars.getRaceFinalWinner 메서드 테스트
 
 -OutputView 
 -InputView
@@ -66,8 +68,9 @@ class Cars
 
     - 메서드
         - CarInfoList getCarInfoList() : 자동차들의 각각의 결과들을 DTO에 담아 반환한다. 
-        - RaceFinalResult getRaceFinalResult() 
+        - RaceFinalWinnner getRaceFinalWinner() 
         - void moveAllCars()
+        - 
 -------------------------------------------
 class CarList
     - 멤버 변수
@@ -77,7 +80,7 @@ class CarList
     - 메서드
         - void moveCars()
         - CarInfoList generateCarInfoList()
-        - RaceFinalResult gnerateRaceFinalResult()
+        - RaceFinalWinner gnerateRaceFinalWinner()
 
 --------------------------------------------
 DTO
@@ -112,7 +115,6 @@ View
     - 메서드
       - void printRoundResult(CarInfoList carInfoList) : 게임 중간 결과
       - void printWinner(RaceFinalResult raceFinalResult) : 승자 출력
-
 
 --------------------------------------------
 utils
