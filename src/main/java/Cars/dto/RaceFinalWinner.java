@@ -16,6 +16,6 @@ public record RaceFinalWinner(List<Car> winnerList) {
         .map(CarName::getName)
         .collect(Collectors.joining(", "));
 
-    Writer.write("승자는: " + winnerNames + "축하합니다.");
+    Writer.write("Winners ars: " + winnerNames + " nice!!");
   }
 }

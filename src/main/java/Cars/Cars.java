@@ -1,6 +1,8 @@
 package Cars;
 
 import Car.Car;
+import Car.dto.CarInfo;
+import Cars.dto.CarInfoList;
 import Cars.dto.RaceFinalWinner;
 
 import java.util.List;
@@ -20,6 +22,10 @@ public class Cars {
 
   public void moveAllCars() {
    carList.moveCars();
+  }
+
+  public CarInfoList getCarsInfoList(){
+    return new CarInfoList(carList.generateCarInfoList());
   }
 
   public RaceFinalWinner getRaceFinalWinner() {

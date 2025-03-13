@@ -1,6 +1,7 @@
 package Cars;
 
 import Car.Car;
+import Car.dto.CarInfo;
 import Cars.dto.RaceFinalWinner;
 import Validator.CarNameValidator;
 import utils.StringConvert;
@@ -66,5 +67,10 @@ public class CarList {
     return Objects.hashCode(carList);
   }
 
+  public List<CarInfo> generateCarInfoList() {
+    return carList.stream()
+        .map(car -> new CarInfo(car.getName(), car.getPosition()))
+        .collect(Collectors.toList());
+  }
 }
 
