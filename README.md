@@ -25,6 +25,12 @@ CarsTest
 2. Cars 객체생성 테스트
 3. Cars.moveAllCars 메스드 테스트
 
+-OutputView 
+-InputView
+-Game (controller)
+
+
+
 < 설계 >
 -----------------------------------------
 interface

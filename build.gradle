@@ -5,6 +5,11 @@ group = 'camp.nextstep'
 version = '1.0.0'
 sourceCompatibility = '1.8'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
+}
+
 repositories {
 	mavenCentral()
 }
