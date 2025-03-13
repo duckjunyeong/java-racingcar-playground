@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import Car.CarName;
 import Car.Position;
-
+import Constant.Err;
 public class CarList {
 
   private List<Car> carList;
@@ -29,14 +29,17 @@ public class CarList {
         .forEach(Car::move);
   }
 
-//  public RaceFinalWinner generateRaceFinalWinner() {
-//    return RaceFinalWinner()
-//  }
+  public List<Car> generateRaceFinalWinner() {
+    Car winnerCar = getWinnerScoreCar();
+    return carList.stream()
+        .filter(car -> car.getPosition().equals(winnerCar.getPosition()))
+        .collect(Collectors.toList());
+  }
 
   public Car getWinnerScoreCar(){
     return carList.stream()
         .max(Car::compareTo)
-        .orElseThrow(() -> new IllegalArgumentException("나중에 Err 에 넣기 "));
+        .orElseThrow(() -> new IllegalArgumentException(Err.EMPTY_STREAM_MESSAGE.getMessage()));
   }
 
   private List<Car> initCarList(String carString) {

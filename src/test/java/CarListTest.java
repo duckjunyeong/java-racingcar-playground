@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import Car.Car;
 import Cars.Cars;
@@ -44,5 +45,13 @@ public class CarListTest {
   void getWinnerScoreCar_test(){
     CarList carlist = new CarList(Arrays.asList(new Car("jun", "14"), new Car("han", "9")));
     assertThat(carlist.getWinnerScoreCar()).isEqualTo(new Car("jun", "14"));
+  }
+
+  @Test
+  @DisplayName("generateRaceFinalWinner 메서드 테스트")
+  void generateRaceFinalWinner_test(){
+    CarList carList = new CarList(Arrays.asList(new Car("jun", "10"), new Car("han", "12"), new Car("kim", "12")));
+    List<Car> expected = Arrays.asList(new Car("han", "12"), new Car("kim", "12"));
+    assertThat(carList.generateRaceFinalWinner()).isEqualTo(expected);
   }
 }

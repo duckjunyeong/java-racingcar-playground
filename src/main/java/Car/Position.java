@@ -2,8 +2,6 @@ package Car;
 
 import Validator.PositionValidator;
 
-import java.util.Comparator;
-
 public class Position implements Comparable<Position> {
   private int position;
   private static final PositionValidator validator = new PositionValidator();
@@ -32,7 +30,7 @@ public class Position implements Comparable<Position> {
     if (obj == this) return true;
     if (obj == null || !(obj instanceof Position)) return false;
     Position pos = (Position) obj;
-    return pos.getPosition() == this.position;
+    return pos.position == this.position;
   }
 
   public void increase() {
