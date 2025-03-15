@@ -28,11 +28,8 @@ CarsTest
 -OutputView 
 -InputView
 -Game (controller)
-
-
-
-< 설계 >
 -----------------------------------------
+< 설계 >
 interface
 
 -MoveStrategy : 자동차를 어떤 조건에 의해 움직일 것인지
